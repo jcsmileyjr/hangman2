@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   score = 0;
-  title = 'hangman2';
+  timer = 90;
 }

@@ -1,10 +1,20 @@
 
-/*tablet-size screens*/
-@media only screen and (min-width: 767px) {
     .app {
         display: flex;
         justify-content: center;
+        
     }
+
+    .container{
+        display: flex;
+        flex-direction: column;
+        background-color: aqua;
+        align-content: space-around;
+    }
+
+/*tablet-size screens*/
+@media only screen and (min-width: 767px) {
+
 
     .container {
         height: 90vh;

@@ -1,0 +1,19 @@
+
+main {
+    text-align: center;
+    flex: 2;
+}
+
+input {
+    margin-right: 30px;
+    border: .5px solid grey;
+    padding: 10px;
+}
+
+button {
+    border-radius: 7px;
+    background-color: #04a004;
+    color: #FEFEFE;
+    font-weight: bold;
+    padding: 10px;
+}

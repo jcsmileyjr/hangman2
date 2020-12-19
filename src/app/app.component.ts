@@ -8,8 +8,8 @@ import { Component } from '@angular/core';
 export class AppComponent {
   score: number = 0;
   timer: number = 90;
-  problem: string = "Party";
-  currentGuessedLetters: string[] = [];
+  problem: string = "Celebration";
+  currentGuessedLetters: string[] = ["e", "a", "c", "n", "b", "t","l"];
   displayArray: string[] = [];
 
   constructor() {
@@ -17,18 +17,14 @@ export class AppComponent {
   }
 
 
-  createDisplayedProblem = (phrase: string) => {
-    
-    /*
+  createDisplayedProblem = (phrase: string) => {    
     let phraseArray = phrase.split("")
     this.displayArray = phraseArray.map(letter => {
-      if(letter !== " "){
-        return "blank";
+      if(this.currentGuessedLetters.includes(letter.toLowerCase())){
+        return letter;
       }else{
-        return "space";
+        return "_";
       }
-    })
-    console.table(this.displayArray);
-    */
+    })    
   }
 }

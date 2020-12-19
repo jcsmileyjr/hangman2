@@ -9,7 +9,8 @@
         display: flex;
         flex-direction: column;
         background-color: aqua;
-        align-content: space-around;
+        justify-content: space-between;
+        height: 100vh;
     }
 
 /*tablet-size screens*/

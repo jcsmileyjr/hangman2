@@ -14,6 +14,6 @@ export class ProblemComponent implements OnInit {
 
   }
 
-  
+
 
 }

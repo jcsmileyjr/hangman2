@@ -1,0 +1,15 @@
+
+main {
+    display:flex;
+    width: 100vw;
+    justify-content: space-around;
+    align-items: center;
+}
+
+h1 {
+    color: #00BE00;
+}
+
+h3 {
+    color: #00BE00;
+}

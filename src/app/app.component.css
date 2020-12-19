@@ -1,0 +1,15 @@
+
+/*large screens*/
+@media only screen and (min-width: 767px) {
+
+    .app {
+        display: flex;
+        justify-content: center;
+    }
+
+    .container {
+        height: 90vh;
+        width: 80vw;
+        background-color: pink;
+    }
+}

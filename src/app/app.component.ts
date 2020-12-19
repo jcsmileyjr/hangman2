@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  score = 0;
-  timer = 90;
+  score: number = 0;
+  timer: number = 90;
+  problem: string = "Love of my Life";
 }

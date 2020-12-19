@@ -1,0 +1,13 @@
+
+main {
+    display: flex;
+    justify-content: center;
+    /*margin-top: -20px;*/
+}
+
+p {
+    font-size: 5vh;
+    color: #00BE00;
+    margin-top: 1px;
+    margin-bottom: 1px;
+}

@@ -6,6 +6,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { TimerComponent } from './components/timer/timer.component';
 import { ProblemComponent } from './components/problem/problem.component';
 import { InputComponent } from './components/input/input.component';
+import { LivesComponent } from './components/lives/lives.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { InputComponent } from './components/input/input.component';
     HeaderComponent,
     TimerComponent,
     ProblemComponent,
-    InputComponent
+    InputComponent,
+    LivesComponent
   ],
   imports: [
     BrowserModule

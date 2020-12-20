@@ -11,6 +11,7 @@ export class AppComponent {
   problem: string = "Celebration";
   currentGuessedLetters: string[] = ["e", "a", "c", "n", "b", "t","l"];
   displayArray: string[] = [];
+  lives: number[] = [1,2,3,4,5];
 
   constructor() {
     this.createDisplayedProblem(this.problem);

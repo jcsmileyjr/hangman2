@@ -8,15 +8,21 @@ import { Component } from '@angular/core';
 export class AppComponent {
   score: number = 0;
   timer: number = 180;
-  interval;
+  interval; // varible used to stop the Interval timer
   problem: string = "Celebration"; // IMPORTANT: Currently 11 length max or update design responsiveness
-  currentGuessedLetters: string[] = ["e", "a", "c", "n", "b", "t","l"];
+  currentGuessedLetters: string[] = [];
   displayArray: string[] = [];
   lives: number[] = [1,2,3,4,5];
   gameOver: boolean = false;
 
   constructor() {
     this.interval = setInterval(()=> this.countdown(), 1000);
+    this.createDisplayedProblem(this.problem);
+  }
+
+  // Method to pass to App-Input component to get the letter the user inputed and apply to the word problem
+  getLetter($event) {
+    this.currentGuessedLetters.push($event);
     this.createDisplayedProblem(this.problem);
   }
 
@@ -29,7 +35,7 @@ export class AppComponent {
     }
   }
 
-
+  // Method to update the word problem based on the letter the user inputted. 
   createDisplayedProblem = (phrase: string) => {    
     let phraseArray = phrase.split("")
     this.displayArray = phraseArray.map(letter => {

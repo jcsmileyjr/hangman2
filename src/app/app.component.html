@@ -8,6 +8,6 @@
     <app-toolbox></app-toolbox>
   </main>  
   <section *ngIf="gameOver">
-    <h1>Game Over</h1>
+    <app-game-over [score]="score"></app-game-over>
   </section>
 </div>

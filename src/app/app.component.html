@@ -1,5 +1,5 @@
 <div class="app">
-  <main class="container">
+  <main *ngIf="!gameOver" class="container">
     <app-header [score]="score"></app-header>
     <app-timer [timer]="timer"></app-timer>
     <app-problem [problem]="displayArray"></app-problem>
@@ -7,4 +7,7 @@
     <app-lives [lives]="lives"></app-lives>
     <app-toolbox></app-toolbox>
   </main>  
+  <section *ngIf="gameOver">
+    <app-game-over [score]="score"></app-game-over>
+  </section>
 </div>

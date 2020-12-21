@@ -8,6 +8,7 @@ import { ProblemComponent } from './components/problem/problem.component';
 import { InputComponent } from './components/input/input.component';
 import { LivesComponent } from './components/lives/lives.component';
 import { ToolboxComponent } from './components/toolbox/toolbox.component';
+import { GameOverComponent } from './components/game-over/game-over.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ToolboxComponent } from './components/toolbox/toolbox.component';
     ProblemComponent,
     InputComponent,
     LivesComponent,
-    ToolboxComponent
+    ToolboxComponent,
+    GameOverComponent
   ],
   imports: [
     BrowserModule

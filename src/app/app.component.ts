@@ -9,8 +9,8 @@ export class AppComponent {
   score: number = 0;
   timer: number = 180;
   interval; // varible used to stop the Interval timer
-  problem: string = "Celebration"; // IMPORTANT: Currently 11 length max or update design responsiveness
-  numberOfCorrectLetters: number = 0;
+  wordsToGuess: string[] = ["Sister", "Snow", "Family","Brother", "Friend", "School", "Daddy", "Mommy"];
+  currentProblem: number = 0; // IMPORTANT: Currently 11 length max or update design responsiveness
   currentGuessedLetters: string[] = [];
   displayArray: string[] = [];
   lives: number[] = [1,2,3,4,5];
@@ -18,15 +18,16 @@ export class AppComponent {
 
   constructor() {
     this.interval = setInterval(()=> this.countdown(), 1000);
-    this.createDisplayedProblem(this.problem);
+    this.createDisplayedProblem(this.wordsToGuess[ this.currentProblem]);
   }
 
   // Method passed to App-Input component to get the letter the user inputed and apply to the word problem
   getLetter($event) {
-    this.updateScore($event, this.problem); // Update the score
+    this.updateScore($event, this.wordsToGuess[ this.currentProblem]); // Update the score
     this.currentGuessedLetters.push($event); // Track the current guessed letters
-    this.createDisplayedProblem(this.problem); // Display the current phrase with or with letters    
-    this.checkWinConditions(this.problem); // Check if the game has been won.
+    this.createDisplayedProblem(this.wordsToGuess[ this.currentProblem]); // Display the current phrase with or with letters    
+    this.checkWinConditions(this.wordsToGuess[ this.currentProblem]); // Check if the game has been won.
+    
   }
 
   // Countdown timer that ends game
@@ -51,21 +52,27 @@ export class AppComponent {
 
   }
 
-  // Update the score by checking if the inputted letter is in the phrased and not already guessed. Also tracks the number of correct answers
+  // Update the score by checking if the inputted letter is in the phrased and not already guessed.
   updateScore(letter: string ,phrase: string){
     let phraseArray = phrase.toLowerCase().split("");
     const updatedLetter = letter.toLowerCase();
     if(phraseArray.includes(updatedLetter) && !this.currentGuessedLetters.includes(updatedLetter)){
       this.score += 10;
-      this.numberOfCorrectLetters += 1;
     }
   }
 
-  // Add points for getting all the correct letters in the phrased. 
-  checkWinConditions(originalPhrase: string ){
-    if(originalPhrase.length === this.numberOfCorrectLetters){
+  // Add points for getting all the correct letters in the phrased and start next game
+  checkWinConditions(originalPhrase: string){
+    if(!this.displayArray.includes("_")){
       this.score += 100;
+      this.currentProblem += 1;
+      this.setupNextGame();
     }
+  }
+
+  setupNextGame(){
+    this.currentGuessedLetters = [];
+    this.createDisplayedProblem(this.wordsToGuess[ this.currentProblem]);
   }
 
 }

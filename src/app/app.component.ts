@@ -20,6 +20,10 @@ export class AppComponent {
     this.createDisplayedProblem(this.problem);
   }
 
+  getLetter($event) {
+    console.log($event)
+  }
+
   // Countdown timer that ends game
   countdown(){
     this.timer = this.timer - 1;

@@ -78,11 +78,13 @@ export class AppComponent {
   }
 
 
+  // method to reset the game after a player gets all the correct letters of the phrase
   setupNextGame(){
     this.currentGuessedLetters = [];
     this.createDisplayedProblem(this.wordsToGuess[ this.currentProblem]);
   }
 
+  // Method used in the toolbox section restart button to restart
   restartGame($event){
     this.gameLives = [1,2,3,4,5];
     this.score = 0;
@@ -93,6 +95,13 @@ export class AppComponent {
     clearInterval(this.interval); 
     this.interval = setInterval(()=> this.countdown(), 1000); // reset the timer
     this.gameOver= false;
+  }
+
+  buyTime($event){
+    if(this.score >= 20){
+      this.score -= 20;
+      this.timer += 60
+    }
   }
 
 }

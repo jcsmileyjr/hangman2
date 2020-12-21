@@ -6,7 +6,8 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./toolbox.component.css']
 })
 export class ToolboxComponent implements OnInit {
-  @Output() restart = new EventEmitter<string>(); // Get the method from the parent
+  @Output() restart = new EventEmitter<string>();
+  @Output() buyTime = new EventEmitter<string>();
   constructor() { }
 
   ngOnInit(): void {

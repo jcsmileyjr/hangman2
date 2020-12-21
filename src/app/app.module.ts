@@ -9,6 +9,7 @@ import { InputComponent } from './components/input/input.component';
 import { LivesComponent } from './components/lives/lives.component';
 import { ToolboxComponent } from './components/toolbox/toolbox.component';
 import { GameOverComponent } from './components/game-over/game-over.component';
+import { UsedLettersComponent } from './components/used-letters/used-letters.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { GameOverComponent } from './components/game-over/game-over.component';
     InputComponent,
     LivesComponent,
     ToolboxComponent,
-    GameOverComponent
+    GameOverComponent,
+    UsedLettersComponent
   ],
   imports: [
     BrowserModule

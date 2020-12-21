@@ -1,4 +1,4 @@
 <main>
-    <input #userInput (keyup.enter)="getValue(userInput.value); userInput.value = ''" type="text" placeholder="Type a Letter" size=10 maxlength=1 />
+    <input #userInput (keyup.enter)="getValue(userInput.value); userInput.value = ''" type="text" size=10 maxlength=1 />
     <button (click)="getValue(userInput.value); userInput.value = ''" type="button" >Submit</button>
 </main>

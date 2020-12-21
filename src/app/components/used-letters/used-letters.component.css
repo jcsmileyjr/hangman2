@@ -1,0 +1,28 @@
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex: 1;
+}
+
+label {
+    margin-right: 3vw;
+    font-size: 10vw;
+    font-weight: bold;
+    color: #707070;
+}
+
+/*tablet-size screens*/
+@media only screen and (min-width: 767px) {
+    label {
+        font-size: 6vw;
+    }
+}
+
+/*large screens*/
+@media only screen and (min-width: 950px) {
+    label {
+        font-size: 4vw;
+    }
+}

@@ -10,6 +10,7 @@ import { LivesComponent } from './components/lives/lives.component';
 import { ToolboxComponent } from './components/toolbox/toolbox.component';
 import { GameOverComponent } from './components/game-over/game-over.component';
 import { UsedLettersComponent } from './components/used-letters/used-letters.component';
+import { AnswerPhraseComponent } from './components/answer-phrase/answer-phrase.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { UsedLettersComponent } from './components/used-letters/used-letters.com
     LivesComponent,
     ToolboxComponent,
     GameOverComponent,
-    UsedLettersComponent
+    UsedLettersComponent,
+    AnswerPhraseComponent
   ],
   imports: [
     BrowserModule

@@ -1,0 +1,52 @@
+
+main {
+    text-align: center;
+    flex: 2;
+}
+
+input {
+    margin-right: 30px;
+    border: 2px solid  #04a004;
+    padding: 10px;
+    height: 7vw;
+    width: 25vw;
+    font-size:20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+button {
+    border-radius: 15px;
+    background-color: #04a004;
+    color: #FEFEFE;
+    font-weight: bold;
+    padding: 10px 10px 10px 10px;
+    font-size: large;
+    height: 7vh;
+    width: 15vh;
+}
+
+/*tablet-size screens*/
+@media only screen and (min-width: 767px) {
+    button{
+        height: 5vh;
+        width: 15vh;
+    }
+
+    input {
+        height: 3vh;
+    }
+}
+
+/*large screens*/
+@media only screen and (min-width: 1150px) {
+    button{
+        height: 5vh;
+        width: 15vh;
+    }
+
+    input {
+        height: 3vh;
+        width: 150px;
+    }
+}

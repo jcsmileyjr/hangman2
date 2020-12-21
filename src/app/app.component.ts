@@ -18,7 +18,7 @@ export class AppComponent {
   answerPhrasePopup: boolean = false;
 
   constructor() {
-    //this.interval = setInterval(()=> this.countdown(), 1000);
+    this.interval = setInterval(()=> this.countdown(), 1000);
     this.createDisplayedProblem(this.wordsToGuess[ this.currentProblem]);
   }
 
@@ -30,6 +30,26 @@ export class AppComponent {
       this.createDisplayedProblem(this.wordsToGuess[ this.currentProblem]); // Display the current phrase with or with letters    
       this.checkWinConditions(this.wordsToGuess[ this.currentProblem]); // Check if the game has been won.
     }    
+  }
+
+  getAnswer($event){
+    let officialAnswer:string = this.wordsToGuess[ this.currentProblem];
+    let formattedAnswer:string = $event;
+    if(officialAnswer.toLocaleLowerCase() === formattedAnswer.toLocaleLowerCase()){
+      this.displayArray = officialAnswer.split("");
+      this.score += 60; // Extra 60 points
+      this.checkWinConditions(this.wordsToGuess[ this.currentProblem]); // Check if the game has been won.
+      console.log("correct answer")
+    }else{
+      if(this.score >= 60){
+        this.score -= 60;
+      }else{
+        this.score = 0;
+      }
+      console.log("wrong answer")
+    }
+
+    this.answerPhrasePopup = false;
   }
 
   // Countdown timer that ends game

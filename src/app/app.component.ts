@@ -8,12 +8,12 @@ import { Component } from '@angular/core';
 export class AppComponent {
   score: number = 0;
   timer: number = 180;
-  interval; // varible used to stop the Interval timer
+  interval: any; // varible used to stop the Interval timer
   wordsToGuess: string[] = ["Sister", "Snow", "Family","Brother", "Friend", "School", "Daddy", "Mommy"];
   currentProblem: number = 0; // IMPORTANT: Currently 11 length max or update design responsiveness
   currentGuessedLetters: string[] = [];
   displayArray: string[] = [];
-  lives: number[] = [1,2,3,4,5];
+  gameLives: number[] = [1,2,3,4,5];
   gameOver: boolean = false;
 
   constructor() {
@@ -53,12 +53,16 @@ export class AppComponent {
 
   }
 
-  // Update the score by checking if the inputted letter is in the phrased and not already guessed.
+  /* Update the score by checking if the inputted letter is in the phrased and not already guessed. If the letter is not 
+  *  in the phrase and not in the current guess letter array, then remove a heart.
+  */
   updateScore(letter: string ,phrase: string){
     let phraseArray = phrase.toLowerCase().split("");
     const updatedLetter = letter.toLowerCase();
     if(phraseArray.includes(updatedLetter) && !this.currentGuessedLetters.includes(updatedLetter)){
       this.score += 10;
+    }else{
+      this.gameLives.pop();
     }
   }
 
@@ -68,8 +72,11 @@ export class AppComponent {
       this.score += 100;
       this.currentProblem += 1;
       this.setupNextGame();
+      this.gameLives.push(this.gameLives.length + 1); // Get a heart for answer
+      this.timer = this.timer + 60; // Gain a minute
     }
   }
+
 
   setupNextGame(){
     this.currentGuessedLetters = [];

@@ -5,7 +5,7 @@
     <app-problem [problem]="displayArray"></app-problem>
     <app-input (getLetter)="getLetter($event)"></app-input>
     <app-used-letters [oldLetters]="currentGuessedLetters"></app-used-letters>
-    <app-lives [lives]="lives"></app-lives>
+    <app-lives [lives]="gameLives"></app-lives>
     <app-toolbox></app-toolbox>
   </main>  
   <section *ngIf="gameOver">

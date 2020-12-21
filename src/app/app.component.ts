@@ -13,11 +13,11 @@ export class AppComponent {
   currentProblem: number = 0; // IMPORTANT: Currently 11 length max or update design responsiveness
   currentGuessedLetters: string[] = [];
   displayArray: string[] = [];
-  lives: number[] = [1,2,3,4,5];
+  gameLives: number[] = [1,2,3,4,5];
   gameOver: boolean = false;
 
   constructor() {
-    this.interval = setInterval(()=> this.countdown(), 1000);
+    //this.interval = setInterval(()=> this.countdown(), 1000);
     this.createDisplayedProblem(this.wordsToGuess[ this.currentProblem]);
   }
 
@@ -62,7 +62,7 @@ export class AppComponent {
     if(phraseArray.includes(updatedLetter) && !this.currentGuessedLetters.includes(updatedLetter)){
       this.score += 10;
     }else{
-      this.lives.pop();
+      this.gameLives.pop();
     }
   }
 
@@ -72,9 +72,11 @@ export class AppComponent {
       this.score += 100;
       this.currentProblem += 1;
       this.setupNextGame();
-      this.lives.push(this.lives.length + 1);
+      this.gameLives.push(this.gameLives.length + 1); // Get a heart for answer
+      this.timer = this.timer + 60; // Gain a minute
     }
   }
+
 
   setupNextGame(){
     this.currentGuessedLetters = [];

@@ -10,7 +10,9 @@ input {
     padding: 10px;
     height: 7vw;
     width: 15vw;
-    font-size:20px
+    font-size:20px;
+    text-align: center;
+    font-weight: bold;
 }
 
 button {

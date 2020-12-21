@@ -1,0 +1,14 @@
+
+main {
+    display: flex;
+    justify-content: space-around;
+}
+
+button {
+    border-radius: 15px;
+    padding: 10px;
+    background-color: white;
+    border: .5px solid grey;
+    font-weight: bold;
+    font-size: large;
+}

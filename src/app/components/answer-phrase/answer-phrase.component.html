@@ -1,0 +1,4 @@
+<main>
+    <input #userAnswer (keyup.enter)="getValue(userAnswer.value); userAnswer.value = ''" type="text" size=20 />
+    <button (click)="getValue(userAnswer.value); userAnswer.value = ''" type="button" >Submit</button>
+</main>

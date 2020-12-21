@@ -3,10 +3,11 @@
     <app-header [score]="score"></app-header>
     <app-timer [timer]="timer"></app-timer>
     <app-problem [problem]="displayArray"></app-problem>
-    <app-input (getLetter)="getLetter($event)"></app-input>
+    <app-input *ngIf="!answerPhrasePopup" (getLetter)="getLetter($event)"></app-input>
+    <app-answer-phrase *ngIf="answerPhrasePopup" (getAnswer)="getAnswer($event)"></app-answer-phrase>
     <app-used-letters [oldLetters]="currentGuessedLetters"></app-used-letters>
     <app-lives [lives]="gameLives"></app-lives>
-    <app-toolbox></app-toolbox>
+    <app-toolbox (restart)="restartGame($event)" (buyTime)="buyTime($event)" (answerPhrase)="answerPhrase($event)"></app-toolbox>
   </main>  
   <section *ngIf="gameOver">
     <app-game-over [score]="score"></app-game-over>

@@ -1,5 +1,5 @@
 <main>
-    <button type="button" style="color: navy"  >Answer</button>
-    <button type="button" style="color: #F89003" >Buy Time</button>
-    <button type="button" style="color: red" >Restart</button>
+    <button type="button" style="color: navy" (click)="answerPhrase.emit()"  >Answer</button>
+    <button type="button" style="color: #F89003" (click)="buyTime.emit()" >Buy Time</button>
+    <button type="button" style="color: red"(click)="restartGame()" >Restart</button>
 </main>

@@ -15,9 +15,10 @@ export class AppComponent {
   displayArray: string[] = [];
   gameLives: number[] = [1,2,3,4,5];
   gameOver: boolean = false;
+  answerPhrasePopup: boolean = false;
 
   constructor() {
-    //this.interval = setInterval(()=> this.countdown(), 1000);
+    this.interval = setInterval(()=> this.countdown(), 1000);
     this.createDisplayedProblem(this.wordsToGuess[ this.currentProblem]);
   }
 
@@ -29,6 +30,25 @@ export class AppComponent {
       this.createDisplayedProblem(this.wordsToGuess[ this.currentProblem]); // Display the current phrase with or with letters    
       this.checkWinConditions(this.wordsToGuess[ this.currentProblem]); // Check if the game has been won.
     }    
+  }
+
+  getAnswer($event){
+    let officialAnswer:string = this.wordsToGuess[ this.currentProblem];
+    let formattedAnswer:string = $event;
+    if(officialAnswer.toLocaleLowerCase() === formattedAnswer.toLocaleLowerCase()){
+      this.displayArray = officialAnswer.split("");
+      this.score += 60; // Extra 60 points
+      this.timer += 60 // extra 60 seconds
+      this.checkWinConditions(this.wordsToGuess[ this.currentProblem]); // Check if the game has been won.
+    }else{
+      if(this.score >= 60){
+        this.score -= 60;
+      }else{
+        this.score = 0;
+      }
+    }
+
+    this.answerPhrasePopup = false;
   }
 
   // Countdown timer that ends game
@@ -78,9 +98,34 @@ export class AppComponent {
   }
 
 
+  // method to reset the game after a player gets all the correct letters of the phrase
   setupNextGame(){
     this.currentGuessedLetters = [];
     this.createDisplayedProblem(this.wordsToGuess[ this.currentProblem]);
+  }
+
+  // Method used in the toolbox section restart button to restart
+  restartGame($event){
+    this.gameLives = [1,2,3,4,5];
+    this.score = 0;
+    this.currentGuessedLetters = [];
+    this.currentProblem = 0;
+    this.createDisplayedProblem(this.wordsToGuess[ this.currentProblem]);
+    this.timer = 180;
+    clearInterval(this.interval); 
+    this.interval = setInterval(()=> this.countdown(), 1000); // reset the timer
+    this.gameOver= false;
+  }
+
+  buyTime($event){
+    if(this.score >= 20){
+      this.score -= 20;
+      this.timer += 60
+    }
+  }
+
+  answerPhrase($event){
+    this.answerPhrasePopup = true;
   }
 
 }

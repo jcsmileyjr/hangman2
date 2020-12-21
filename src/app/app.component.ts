@@ -15,6 +15,7 @@ export class AppComponent {
   displayArray: string[] = [];
   gameLives: number[] = [1,2,3,4,5];
   gameOver: boolean = false;
+  answerPhrasePopup: boolean = false;
 
   constructor() {
     //this.interval = setInterval(()=> this.countdown(), 1000);
@@ -102,6 +103,10 @@ export class AppComponent {
       this.score -= 20;
       this.timer += 60
     }
+  }
+
+  answerPhrase($event){
+    this.answerPhrasePopup = true;
   }
 
 }

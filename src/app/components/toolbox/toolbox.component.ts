@@ -8,6 +8,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 export class ToolboxComponent implements OnInit {
   @Output() restart = new EventEmitter<string>();
   @Output() buyTime = new EventEmitter<string>();
+  @Output() answerPhrase = new EventEmitter<string>();
   constructor() { }
 
   ngOnInit(): void {

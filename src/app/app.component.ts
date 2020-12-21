@@ -17,7 +17,7 @@ export class AppComponent {
   gameOver: boolean = false;
 
   constructor() {
-    this.interval = setInterval(()=> this.countdown(), 1000);
+    //this.interval = setInterval(()=> this.countdown(), 1000);
     this.createDisplayedProblem(this.wordsToGuess[ this.currentProblem]);
   }
 

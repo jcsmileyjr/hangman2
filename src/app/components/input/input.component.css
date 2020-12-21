@@ -8,6 +8,9 @@ input {
     margin-right: 30px;
     border: .5px solid grey;
     padding: 10px;
+    height: 7vw;
+    width: 15vw;
+    font-size:20px
 }
 
 button {
@@ -15,6 +18,33 @@ button {
     background-color: #04a004;
     color: #FEFEFE;
     font-weight: bold;
-    padding: 7px;
+    padding: 10px 10px 10px 10px;
     font-size: large;
+    height: 7vh;
+    width: 15vh;
+}
+
+/*tablet-size screens*/
+@media only screen and (min-width: 767px) {
+    button{
+        height: 5vh;
+        width: 15vh;
+    }
+
+    input {
+        height: 3vh;
+    }
+}
+
+/*large screens*/
+@media only screen and (min-width: 1150px) {
+    button{
+        height: 5vh;
+        width: 15vh;
+    }
+
+    input {
+        height: 3vh;
+        width: 150px;
+    }
 }

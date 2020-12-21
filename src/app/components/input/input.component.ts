@@ -6,16 +6,15 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./input.component.css']
 })
 export class InputComponent implements OnInit {
-  userAnswer: string = "";
   @Output() getLetter = new EventEmitter<string>(); // Get the method from the parent
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  // Method called in the input that calls the method passed on from the parent to get the letter entered by the user
   getValue(value: string){
-    this.userAnswer = value;
-    this.getLetter.emit(this.userAnswer)
+    this.getLetter.emit(value)
   }
 
 }

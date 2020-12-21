@@ -7,6 +7,7 @@ import { TimerComponent } from './components/timer/timer.component';
 import { ProblemComponent } from './components/problem/problem.component';
 import { InputComponent } from './components/input/input.component';
 import { LivesComponent } from './components/lives/lives.component';
+import { ToolboxComponent } from './components/toolbox/toolbox.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { LivesComponent } from './components/lives/lives.component';
     TimerComponent,
     ProblemComponent,
     InputComponent,
-    LivesComponent
+    LivesComponent,
+    ToolboxComponent
   ],
   imports: [
     BrowserModule

@@ -23,11 +23,12 @@ export class AppComponent {
 
   // Method passed to App-Input component to get the letter the user inputed and apply to the word problem
   getLetter($event) {
-    this.updateScore($event, this.wordsToGuess[ this.currentProblem]); // Update the score
-    this.currentGuessedLetters.push($event); // Track the current guessed letters
-    this.createDisplayedProblem(this.wordsToGuess[ this.currentProblem]); // Display the current phrase with or with letters    
-    this.checkWinConditions(this.wordsToGuess[ this.currentProblem]); // Check if the game has been won.
-    
+    if(!this.currentGuessedLetters.includes($event)){
+      this.updateScore($event, this.wordsToGuess[ this.currentProblem]); // Update the score
+      this.currentGuessedLetters.push($event); // Track the current guessed letters
+      this.createDisplayedProblem(this.wordsToGuess[ this.currentProblem]); // Display the current phrase with or with letters    
+      this.checkWinConditions(this.wordsToGuess[ this.currentProblem]); // Check if the game has been won.
+    }    
   }
 
   // Countdown timer that ends game

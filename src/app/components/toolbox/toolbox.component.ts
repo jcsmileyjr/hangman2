@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-toolbox',
@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./toolbox.component.css']
 })
 export class ToolboxComponent implements OnInit {
-
+  @Output() restart = new EventEmitter<string>(); // Get the method from the parent
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  restartGame(){
+    this.restart.emit();
   }
 
 }

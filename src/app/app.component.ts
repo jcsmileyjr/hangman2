@@ -83,4 +83,16 @@ export class AppComponent {
     this.createDisplayedProblem(this.wordsToGuess[ this.currentProblem]);
   }
 
+  restartGame($event){
+    this.gameLives = [1,2,3,4,5];
+    this.score = 0;
+    this.currentGuessedLetters = [];
+    this.currentProblem = 0;
+    this.createDisplayedProblem(this.wordsToGuess[ this.currentProblem]);
+    this.timer = 180;
+    clearInterval(this.interval); 
+    this.interval = setInterval(()=> this.countdown(), 1000); // reset the timer
+    this.gameOver= false;
+  }
+
 }

@@ -38,15 +38,14 @@ export class AppComponent {
     if(officialAnswer.toLocaleLowerCase() === formattedAnswer.toLocaleLowerCase()){
       this.displayArray = officialAnswer.split("");
       this.score += 60; // Extra 60 points
+      this.timer += 60 // extra 60 seconds
       this.checkWinConditions(this.wordsToGuess[ this.currentProblem]); // Check if the game has been won.
-      console.log("correct answer")
     }else{
       if(this.score >= 60){
         this.score -= 60;
       }else{
         this.score = 0;
       }
-      console.log("wrong answer")
     }
 
     this.answerPhrasePopup = false;

@@ -7,9 +7,9 @@ main {
 
 button {
     border-radius: 15px;
+    border: none;
     padding: 10px;
     background-color: white;
-    border: .5px solid grey;
     -webkit-box-shadow: 5px 5px 15px -1px #707070; 
     box-shadow: 5px 5px 15px -1px #707070;
     font-weight: bold;

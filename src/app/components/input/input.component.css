@@ -5,8 +5,8 @@ main {
 }
 
 input {
-    margin-right: 30px;
-    border: .5px solid grey;
+    margin-right: 30px;    
+    border: none;
     -webkit-box-shadow: 5px 5px 15px -1px #707070; 
     box-shadow: 5px 5px 15px -1px #707070;
     padding: 10px;
@@ -19,6 +19,7 @@ input {
 
 button {
     border-radius: 15px;
+    border: none;
     background-color: #04a004;
     -webkit-box-shadow: 5px 5px 15px -1px #707070; 
     box-shadow: 5px 5px 15px -1px #707070;

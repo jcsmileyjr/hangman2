@@ -6,6 +6,11 @@ main {
     flex: 1;
 }
 
+img {
+  height: 7vh;
+  width: 8vw;
+}
+
 h1 {
     color: #00BE00;
 }

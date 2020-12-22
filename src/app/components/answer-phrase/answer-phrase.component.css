@@ -7,6 +7,8 @@ main {
 input {
     margin-right: 30px;
     border: 2px solid  #04a004;
+    -webkit-box-shadow: 5px 5px 15px 5px #000000; 
+    box-shadow: 5px 5px 15px 5px #000000;
     padding: 10px;
     height: 7vw;
     width: 25vw;
@@ -18,6 +20,8 @@ input {
 button {
     border-radius: 15px;
     background-color: #04a004;
+    -webkit-box-shadow: 5px 5px 15px 5px #000000; 
+    box-shadow: 5px 5px 15px 5px #000000;
     color: #FEFEFE;
     font-weight: bold;
     padding: 10px 10px 10px 10px;

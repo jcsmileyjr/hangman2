@@ -1,6 +1,6 @@
 <div class="app">
   <main *ngIf="!gameOver" class="container">
-    <app-header [score]="score"></app-header>
+    <app-header [score]="score" [animation]="scoreAnimation" ></app-header>
     <app-timer [timer]="timer"></app-timer>
     <app-problem [problem]="displayArray"></app-problem>
     <app-input *ngIf="!answerPhrasePopup" (getLetter)="getLetter($event)"></app-input>

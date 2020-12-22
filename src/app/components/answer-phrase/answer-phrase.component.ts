@@ -14,7 +14,9 @@ export class AnswerPhraseComponent implements OnInit {
 
   // Method called in the input that calls the method passed on from the parent to get the word entered by the user
   getValue(value: string){
-    this.getAnswer.emit(value)
+    if(/[a-zA-Z]/.test(value)){
+      this.getAnswer.emit(value)
+    }
   }
 
 }

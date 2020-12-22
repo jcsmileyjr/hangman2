@@ -7,6 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   @Input() score:string;
+  @Input() animation: boolean;
   
   constructor() { }
 

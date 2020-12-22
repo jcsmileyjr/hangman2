@@ -16,6 +16,7 @@ export class AppComponent {
   gameLives: number[] = [1,2,3,4,5];
   gameOver: boolean = false;
   answerPhrasePopup: boolean = false;
+  scoreAnimation: boolean = false;
 
   constructor() {
     this.interval = setInterval(()=> this.countdown(), 1000);
@@ -32,6 +33,7 @@ export class AppComponent {
     }    
   }
 
+  // allow user to answer entire word
   getAnswer($event){
     let officialAnswer:string = this.currentProblem;
     let formattedAnswer:string = $event;
@@ -46,6 +48,7 @@ export class AppComponent {
       }else{
         this.score = 0;
       }
+      this.animateScore();
     }
 
     this.answerPhrasePopup = false;
@@ -55,8 +58,7 @@ export class AppComponent {
   countdown(){
     this.timer = this.timer - 1;
     if(this.timer <= 0){
-      this.gameOver = true;
-      clearInterval(this.interval);
+      this.endGame();
     }
   }
 
@@ -81,8 +83,12 @@ export class AppComponent {
     const updatedLetter = letter.toLowerCase();
     if(phraseArray.includes(updatedLetter) && !this.currentGuessedLetters.includes(updatedLetter)){
       this.score += 10;
+      this.animateScore();
     }else{
       this.gameLives.pop();
+      if(this.gameLives.length <= 0){
+        this.endGame();
+      }
     }
   }
 
@@ -90,6 +96,7 @@ export class AppComponent {
   checkWinConditions(){
     if(!this.displayArray.includes("_")){
       this.score += 100;
+      this.animateScore();
       this.setupNextGame();
       this.gameLives.push(this.gameLives.length + 1); // Get a heart for answer
       this.timer = this.timer + 60; // Gain a minute
@@ -135,6 +142,17 @@ export class AppComponent {
     this.wordsToGuess.splice(randomNumber,1);
     this.currentProblem = currentWord;
     return currentWord;
+  }
+
+  // function to animate the score
+  animateScore(){
+    setTimeout(()=> this.scoreAnimation = false, 300);
+    this.scoreAnimation = true
+  }
+
+  endGame(){
+    this.gameOver = true;
+    clearInterval(this.interval);
   }
 
 }

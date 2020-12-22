@@ -13,3 +13,20 @@ h1 {
 h3 {
     color: #00BE00;
 }
+
+.blink {
+    animation: blinking 5s ease-out;
+}
+  
+/*animate the symbols falling from the top of the app*/
+@keyframes blinking {
+    0% {
+      background-color: #F89003;
+    }
+    50% {
+      background-color:  #00BE00;
+    }
+    100% {
+      background-color: #F89003;
+    }
+}

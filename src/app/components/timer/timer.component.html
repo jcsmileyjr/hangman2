@@ -1,3 +1,3 @@
 <main>
-    <p>{{timer}}</p>
+    <p [ngClass]="{'red':timer < 60}" [ngClass]="{'orange':timer < 120}">{{timer}}</p>
 </main>

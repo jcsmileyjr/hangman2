@@ -58,8 +58,7 @@ export class AppComponent {
   countdown(){
     this.timer = this.timer - 1;
     if(this.timer <= 0){
-      this.gameOver = true;
-      clearInterval(this.interval);
+      this.endGame();
     }
   }
 
@@ -87,6 +86,9 @@ export class AppComponent {
       this.animateScore();
     }else{
       this.gameLives.pop();
+      if(this.gameLives.length <= 0){
+        this.endGame();
+      }
     }
   }
 
@@ -146,6 +148,11 @@ export class AppComponent {
   animateScore(){
     setTimeout(()=> this.scoreAnimation = false, 300);
     this.scoreAnimation = true
+  }
+
+  endGame(){
+    this.gameOver = true;
+    clearInterval(this.interval);
   }
 
 }

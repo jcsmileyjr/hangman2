@@ -7,8 +7,16 @@ main {
 
 p {
     font-size: 5vh;
-    color: #F89003;
+    color: green;
     font-weight: bold;
     margin-top: 1px;
     margin-bottom: 1px;
+}
+
+.red {
+    color: red;
+}
+
+.orange {
+    color: #F89003;
 }

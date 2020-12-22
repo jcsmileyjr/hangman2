@@ -32,6 +32,7 @@ export class AppComponent {
     }    
   }
 
+  // allow user to answer entire word
   getAnswer($event){
     let officialAnswer:string = this.currentProblem;
     let formattedAnswer:string = $event;

@@ -14,7 +14,10 @@ export class InputComponent implements OnInit {
 
   // Method called in the input that calls the method passed on from the parent to get the letter entered by the user
   getValue(value: string){
-    this.getLetter.emit(value)
+    if(/[a-zA-Z]/.test(value)){
+      this.getLetter.emit(value)
+    }
+    
   }
 
 }

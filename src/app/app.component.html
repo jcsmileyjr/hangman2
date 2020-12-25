@@ -10,6 +10,6 @@
     <app-toolbox (restart)="restartGame($event)" (buyTime)="buyTime($event)" (answerPhrase)="answerPhrase($event)"></app-toolbox>
   </main>  
   <section *ngIf="gameOver">
-    <app-game-over [score]="score"></app-game-over>
+    <app-game-over [score]="score" (restart)="restartGame($event)"></app-game-over>
   </section>
 </div>

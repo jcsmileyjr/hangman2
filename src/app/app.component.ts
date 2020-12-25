@@ -13,7 +13,7 @@ export class AppComponent {
   currentProblem: string; // IMPORTANT: Currently 11 length max or update design responsiveness
   currentGuessedLetters: string[] = [];
   displayArray: string[] = [];
-  gameLives: number[] = [1,2,3,4,5];
+  gameLives: number[] = [1,2,3,4,5,6,7,8,9,10];
   gameOver: boolean = false;
   answerPhrasePopup: boolean = false;
   scoreAnimation: boolean = false;

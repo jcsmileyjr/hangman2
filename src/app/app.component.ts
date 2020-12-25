@@ -19,7 +19,7 @@ export class AppComponent {
   scoreAnimation: boolean = false;
 
   constructor() {
-    //this.interval = setInterval(()=> this.countdown(), 1000);
+    this.interval = setInterval(()=> this.countdown(), 1000);
     this.createDisplayedProblem(this.getRandomPhrase());
   }
 

@@ -1,4 +1,9 @@
 <main>
-    <input #userInput (keyup.enter)="getValue(userInput.value); userInput.value = ''" type="text" size=10 maxlength=1 pattern="[a-zA-Z]" />
-    <button (click)="getValue(userInput.value); userInput.value = ''" type="button" >Submit</button>
+    <section>
+        <input #userInput (keyup.enter)="getValue(userInput.value); userInput.value = ''" type="text" size=10 maxlength=1 pattern="[a-zA-Z]" />
+    </section>
+    <section>
+        <button (click)="getValue(userInput.value); userInput.value = ''" type="button" >Submit</button>
+    </section>
+    
 </main>

@@ -1,17 +1,22 @@
 
 main {
-    text-align: center;
+    
     flex: 2;
 }
 
-input {
-    margin-right: 30px;    
+section {
+    padding-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+input {    
     border: none;
     -webkit-box-shadow: 5px 5px 15px -1px #707070; 
     box-shadow: 5px 5px 15px -1px #707070;
     padding: 10px;
     height: 7vw;
-    width: 15vw;
+    width: 20vw;
     font-size:20px;
     text-align: center;
     font-weight: bold;
@@ -28,7 +33,7 @@ button {
     padding: 10px 10px 10px 10px;
     font-size: large;
     height: 7vh;
-    width: 15vh;
+    width: 20vh;
 }
 
 /*tablet-size screens*/

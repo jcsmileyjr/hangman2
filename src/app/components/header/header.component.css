@@ -1,5 +1,5 @@
 
-main {
+section {
     display:flex;
     justify-content: space-around;
     align-items: center;
@@ -13,6 +13,7 @@ img {
 
 h1 {
     color: #00BE00;
+    text-align: center;
 }
 
 h2 {
